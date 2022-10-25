@@ -2,5 +2,8 @@
 joolmal 3.7.0 Exploit
 https://github.com/stefanlucas/Exploit-Joomla
 
+john --format=bcrypt --wordlist=rockyou.txt hash.txt 
+or 
 hashcat.exe -m 3200 daily-bugle.txt rockyou.txt
+
 
