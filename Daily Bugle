@@ -7,3 +7,8 @@ or
 hashcat.exe -m 3200 daily-bugle.txt rockyou.txt
 
 
+PHP Reverse Shell for index.php
+https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php
+
+
+
