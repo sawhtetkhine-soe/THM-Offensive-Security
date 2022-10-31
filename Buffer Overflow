@@ -1,1 +1,16 @@
+Spiking 
 
+generic_send_tcp (tool)
+gedit stats.spk
+
+s_readline();
+s_string("STATS ");
+s_string_variable("0");
+
+generic_send_tcp 192.168.1.1 9999 stats.spk 0 0
+
+gedit trun.spk
+
+s_readline();
+s_string("TRUN ");
+s_string_variable("0");
