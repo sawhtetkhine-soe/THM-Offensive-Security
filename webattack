@@ -1,1 +1,32 @@
 
+----------------------------------------------------------------
+{Brute Force, OSINT (Open-Source Intelligence) and Virtual Host}
+----------------------------------------------------------------
+
+SSL/TLS Certificates
+crt.sh
+
+Search Engines
+-site:www.tryhackme.com  site:*.tryhackme.com
+
+DNS Brute Force 
+dnsrecon -t brt -d example.com
+
+OSINT (Open-Source Intelligence)
+Sublist3r, 
+./sublist3r.py -d example.com
+
+Virtual Host
+ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP
+ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP -fs {size}
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+IDOR - Insecure Direct Object Reference
+---------------------------------------
+Decode or change user ID
+eg  browser developer tools, select the network tab and then refresh the page find user ID in response tab
+https://www.base64decode.org/ 
+https://crackstation.net/ 
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
